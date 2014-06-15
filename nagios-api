@@ -57,6 +57,7 @@ def _send_json(req, success, content):
     }
     if ALLOW_ORIGIN is not None:
         headers['Access-Control-Allow-Origin'] = ALLOW_ORIGIN
+        headers['Access-Control-Allow-Headers'] = 'origin, content-type, accept'
     if 'gzip' in req.headers.get('Accept-Encoding', ''):
         headers['Content-Encoding'] = 'gzip'
         strout = StringIO()
